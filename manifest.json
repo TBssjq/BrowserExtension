@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "DeepSeek 对话批量选择助手",
+  "version": "1.0.0",
+  "description": "在 chat.deepseek.com 的「选择对话」模式下一键多选：全选、反选、按日期分组批量勾选。",
+  "permissions": ["storage"],
+  "host_permissions": ["https://chat.deepseek.com/*"],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "DeepSeek 对话批量选择助手"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chat.deepseek.com/*"],
+      "js": [
+        "src/core/dom.js",
+        "src/core/actions.js",
+        "src/ui/panel.js",
+        "src/main.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

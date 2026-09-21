@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DeepSeek 对话批量选择助手</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <span class="dot"></span>
+      <h1>对话批量选择助手</h1>
+    </header>
+
+    <section class="status" id="status">正在检测当前页面…</section>
+
+    <section class="block">
+      <label class="switch">
+        <input type="checkbox" id="enabled" />
+        <span>启用扩展</span>
+      </label>
+      <label class="switch">
+        <input type="checkbox" id="autoShow" />
+        <span>进入「选择对话」时自动显示面板</span>
+      </label>
+    </section>
+
+    <section class="block">
+      <div class="row">
+        <button class="btn primary" id="btn-show">显示面板</button>
+        <button class="btn" id="btn-hide">隐藏面板</button>
+      </div>
+      <div class="row">
+        <button class="btn" id="btn-all">全选</button>
+        <button class="btn" id="btn-none">全不选</button>
+      </div>
+    </section>
+
+    <section class="block">
+      <label class="field">
+        <span>自定义分组标题正则（可选）</span>
+        <input type="text" id="pattern" placeholder="例如：^(本周|上周|更早)$" />
+      </label>
+      <p class="tip">
+        站点出现新的日期分组写法时，在这里补一条正则即可，格式与 JS RegExp 一致，忽略大小写。
+      </p>
+    </section>
+
+    <footer>
+      <span id="saveHint"></span>
+      <a href="https://chat.deepseek.com/" target="_blank">打开 DeepSeek</a>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
